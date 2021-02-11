@@ -24,7 +24,7 @@ RUN chown -R root ${PDI_HOME}
 
 # Download Pentaho PDI
 RUN /usr/bin/wget --progress=dot:giga \
-"http://downloads.sourceforge.net/project/pentaho/Pentaho%20${PDI_VERSION}/client-tools/pdi-ce-${PDI_TAG}.zip" \
+"https://downloads.sourceforge.net/project/pentaho/Pentaho%20${PDI_VERSION}/client-tools/pdi-ce-${PDI_TAG}.zip" \
 -O /tmp/pdi-ce-${PDI_TAG}.zip; \
 /usr/bin/unzip -q /tmp/pdi-ce-${PDI_TAG}.zip -d $PDI_HOME; 
 RUN rm -f /tmp/pdi-ce-${PDI_TAG}.zip  
@@ -37,7 +37,7 @@ RUN chown -R root $PDI_HOME/data-integration/entry
 
 #Diretorio dos Etl files 
 RUN mkdir $PDI_HOME/data-integration/etl
-RUN chown -R root $PDI_HOME/data-integration/etl
+RUN chmod 777 $PDI_HOME/data-integration/etl
 
 #ADD DB drivers
 RUN chown -R root $PDI_HOME/data-integration/lib

@@ -21,6 +21,8 @@ ext="${arquivo:(-4)}" # get extension
 # Vars
 etl=/opt/PDI/data-integration/etl
 
+ls /opt/PDI/data-integration/etl
+
 # Get etl
 #mkdir -p $etl
 #ssh-keyscan -H github.com >> ~/.ssh/known_hosts # this is bad practice
